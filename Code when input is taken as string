@@ -1,0 +1,48 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+bool comp(string a, string b)
+{
+    return (a + b > b + a);
+}
+
+void getLargestNum(vector<string> arr)
+{
+    sort(arr.begin(), arr.end(), comp);
+    
+    if(arr[0] == '0')
+    {
+        cout << "0" << endl;
+        return;
+    }
+    
+    for(auto itr = arr.begin(); itr != arr.end(); itr++)
+    cout << *itr;
+    
+    cout << endl;
+    
+    return;
+}
+
+int main()
+ {
+     int t;
+     cin >> t;
+     
+     while(t--)
+     {
+         int num;
+         cin >> num;
+         
+         vector<string> arr(num);
+         
+         for(auto itr = arr.begin(); itr != arr.end(); itr++)
+         {
+             cin >> *itr;
+         }
+         
+         getLargestNum(arr);
+     }
+	
+	return 0;
+}
